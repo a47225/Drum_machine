@@ -1,38 +1,103 @@
+:root{
+  --center-screen: ;
+}
+
+body {
+  margin: 0;
+  background-image: url("D:\Projetos\freeCodeCamp\Projects\drum_machine\Images\music production studio.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.drum-machine {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 475px;
+  width: 475px;
+  background-image: url("D:\Projetos\freeCodeCamp\Projects\drum_machine\Images\retro_pad.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#display{
+  width: 55.8%;
+  height: 34.5%;
+  background: black;
+  position:absolute;
+  top:10.1%;
+  left:6%;
+  color:white;
+  -webkit-box-shadow: inset 0px 0px 18px 8px rgba(0,0,0,0.48);
+  -moz-box-shadow: inset 0px 0px 18px 8px rgba(0,0,0,0.48);
+  box-shadow: inset 0px 0px 18px 8px rgba(0,0,0,0.48);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#display:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  background-image: url("D:\Projetos\freeCodeCamp\Projects\drum_machine\Images\retro-screen.jpg");
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#display h2{
+  opacity: 0;
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.fade-in {
+  animation: fadeIn 1s ease forwards;
 }
 
-@keyframes App-logo-spin {
+#keyboard{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  column-gap: 23px;
+  row-gap: 25px;
+  position:absolute;
+  top: 55%;
+  left: 15%;
+}
+
+.drum-pad {
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:2em;
+  width:2em;
+  padding:1em;
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  transform: rotate(-6deg);
+  transition: transform .15s linear;
+  border:none;
+}
+
+
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
-  }
+    opacity: 1;
+  } 
 }
